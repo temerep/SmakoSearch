@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+  <link rel="icon" href="../assets/img/favicon.png">
+  <title>Заклади</title>
+</head>
+
+<body class="bg-white dark:bg-zinc-900 overflow-x-hidden">
+  <header class="absolute inset-x-0 top-0 z-50 overflow-hidden">
+    <nav class="bg-white border-zinc-200 dark:bg-zinc-900">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="/" class="flex items-center">
+          <img src="./assets/img/logo.png" class="h-8 mr-3" alt="Logo" />
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">SmakoПошук</span>
+        </a>
+        <div class="flex md:order-2">
+          <button id="theme-toggle" type="button" class="text-zinc-500 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-700 focus:outline-none rounded-lg text-sm p-2.5">
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+          <button data-collapse-toggle="navbar-cta" type="button"
+            class="inline-flex items-center p-2 text-sm text-zinc-500 rounded-lg md:hidden lg:hidden hover:bg-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-200 dark:text-zinc-400 dark:hover:bg-zinc-700 dark:focus:ring-zinc-600"
+            aria-controls="navbar-cta"
+            aria-expanded="false"
+            onclick="toggleMenu()">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 z-50" id="navbar-cta">
+          <ul
+            class="flex flex-col lg:items-center md:items-center font-medium p-4 mr-5 md:p-0 mt-4 border border-zinc-100 rounded-lg bg-zinc-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-zinc-800 md:dark:bg-zinc-900 dark:border-zinc-700">
+            <li>
+              <a href="/search"
+                class="flex py-2 pl-3 pr-4 text-zinc-900 rounded hover:bg-zinc-100 md:hover:bg-transparent md:hover:text-orange-500 md:p-0 md:dark:hover:text-orange-500 dark:text-white dark:hover:bg-zinc-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-zinc-700 sm:focus:bg-orange-500 sm:focus:text-white sm:dark:focus:bg-orange-500"
+                aria-current="page"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                </svg>Пошук</a>
+            </li>
+            <li>
+              <a href="/services"
+                class="block py-2 pl-3 pr-4 text-zinc-900 rounded hover:bg-zinc-100 md:hover:bg-transparent md:hover:text-orange-500 md:p-0 md:dark:hover:text-orange-500 dark:text-white dark:hover:bg-zinc-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-zinc-700 sm:focus:bg-orange-500 sm:focus:text-white sm:dark:focus:bg-orange-500">Заклади</a>
+            </li>
+            <li>
+              <a href="/about"
+                class="block py-2 pl-3 pr-4 text-zinc-900 rounded hover:bg-zinc-100 md:hover:bg-transparent md:hover:text-orange-500 md:p-0 md:dark:hover:text-orange-500 dark:text-white dark:hover:bg-zinc-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-zinc-700 sm:focus:bg-orange-500 sm:focus:text-white sm:dark:focus:bg-orange-500">Про нас</a>
+            </li>
+              <button type="button" onclick="addServiceToggle()"
+                class="md:hidden lg:inline-flex inline-flex text-white bg-orange-500 hover:bg-orange-400 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 items-center dark:hover:bg-orange-400">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                Додати заклад
+            </button>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-0">
+    <div class="flex items-baseline justify-between pb-6 pt-24">
+      <h1 class="px-4 text-4xl font-bold tracking-tight text-zinc-900 dark:text-orange-500">Заклади Львова</h1>
+    </div>  
+  </main>
+  <div class="container p-4 mx-auto">
+    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+      <div class="container mx-auto">
+        <p id="search-empty" class="mx-auto text-center items-center text-zinc-400">Список пустий</p>
+        <div id="dashboard" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Додати новий заклад (модальне вікно) -->
+
+  <div id="modal" class="hidden relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="fixed inset-0 bg-zinc-800 dark:bg-zinc-900 bg-opacity-75 dark:bg-opacity-90 transition-opacity"></div>
+      <div class="fixed inset-0 z-10 overflow-y-auto">
+        <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+          <div class="relative w-full max-w-md max-h-full">
+            <div class="relative bg-white rounded-lg shadow dark:bg-zinc-900 ring-4 ring-orange-500">
+              <button type="button" onclick="addServiceToggle()"
+                class="absolute top-3 right-2.5 text-zinc-400 bg-transparent hover:bg-zinc-200 hover:text-zinc-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-zinc-800 dark:hover:text-white"
+                data-modal-hide="modal">
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span class="sr-only">Close modal</span>
+              </button>
+              <div class="p-6 text-center">
+                <img class="mx-auto w-20" src="../assets/img/logo.png" alt="" />
+                <h1 class="mb-5 text-2xl font-medium text-zinc-900 dark:text-zinc-100">Бажаєте додати свій заклад на
+                  <b>SmakoПошук</b>?</h1>
+                <h3 class="mb-10 text-base font-normal text-zinc-500 dark:text-zinc-400">Заповніть інформацію нижче та
+                  очікуйте підтвердження</h3>
+                <div class="mb-5">
+                  <label for="name" class="block mb-2 text-sm font-medium text-zinc-900 dark:text-white">Назва
+                    закладу:</label>
+                  <input type="text" id="name"
+                    class="bg-zinc-50 text-center border border-zinc-300 text-zinc-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5 dark:bg-zinc-800 dark:border-zinc-600 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
+                    placeholder="Майстерня шоколаду" required>
+                </div>
+                <div class="mb-5">
+                  <label for="place"
+                    class="block mb-2 text-sm font-medium text-zinc-900 dark:text-white">Розташування:</label>
+                  <input type="text" id="place"
+                    class="bg-zinc-50 text-center border border-zinc-300 text-zinc-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5 dark:bg-zinc-800 dark:border-zinc-600 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
+                    placeholder="пл. Ринок, 12" required>
+                </div>
+                <div class="mb-10">
+                  <label for="contact" class="block mb-2 text-sm font-medium text-zinc-900 dark:text-white">Telegram /
+                    Insta / Viber:</label>
+                  <input type="text" id="contact"
+                    class="bg-zinc-50 border text-center border-zinc-300 text-zinc-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5 dark:bg-zinc-800 dark:border-zinc-600 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
+                    placeholder="@example" required>
+                </div>
+                <button data-modal-hide="popup-modal" type="button"
+                  class="text-white bg-orange-500 hover:bg-orange-600 focus:outline-none font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">Подати
+                  запит</button>
+                <button data-modal-hide="popup-modal" type="button" onclick="addServiceToggle()"
+                  class="text-zinc-900 bg-white hover:bg-zinc-100 focus:outline-none rounded-lg border border-zinc-200 text-sm font-medium px-5 py-2.5 hover:text-zinc-900 focus:z-10 dark:bg-zinc-900 dark:text-zinc-300 dark:border-zinc-500 dark:hover:text-white dark:hover:bg-zinc-600 dark:focus:ring-zinc-600">Скасувати</button>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+    </div>
+  
+    <!-- Кінець модального вікна -->
+
+  <footer class="bg-white mx-auto max-w-7xl rounded-lg shadow m-4 dark:bg-zinc-800">
+    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+      <span class="text-sm text-zinc-500 sm:text-center dark:text-zinc-400">© 2023 <a href="https://flowbite.com/" class="hover:underline">SmakoПошук</a>. Всі права захищені.
+    </span>
+    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-zinc-500 dark:text-zinc-400 sm:mt-0">
+        <li>
+            <a href="/search" class="mr-4 hover:underline md:mr-6 ">Пошук</a>
+        </li>
+        <li>
+            <a href="/services" class="mr-4 hover:underline md:mr-6">Заклади</a>
+        </li>
+        <li>
+            <a href="/about" class="mr-4 hover:underline md:mr-6">Про нас</a>
+        </li>
+        <li>
+            <a href="#" class="hover:underline">Звʼязатись</a>
+        </li>
+    </ul>
+    </div>
+  </footer>
+  <script src="../assets/js/script.js" type="text/javascript"></script>
+</body>
+
+</html>
