@@ -1,0 +1,27 @@
+{
+  "name": "smakosearch",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind": "npx tailwindcss -i ./public/assets/css/main.css -o ./public/assets/css/style.css",
+    "start": "npx tailwindcss -i ./public/assets/css/main.css -o ./public/assets/css/style.css && nodemon server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.3",
+    "axios": "^1.4.0",
+    "cors": "^2.8.5",
+    "flowbite": "^1.6.5",
+    "mongodb": "^5.5.0",
+    "mongoose": "^7.1.1",
+    "nodemon": "^2.0.22",
+    "tailwind": "^4.0.0"
+  },
+  "description": ""
+}
